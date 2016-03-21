@@ -1,0 +1,32 @@
+<table id="table-responsive">
+      <!-- table headers met daarin sorteren opties-->
+            <tr id="table-heading">
+                  <th ng-click="sort('id')">{{lener.id}}
+                        <span class="" ng-show="sortKey=='id'" ng-class="{'ion-chevron-up':reverse,'ion-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('lidnummer')">{{lener.lidnummer}}
+                        <span class="" ng-show="sortKey=='lidnummer'" ng-class="{'ion-chevron-up':reverse,'ion-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('geb_dec')">{{lener.geboortedecennium}}
+                        <span class="" ng-show="sortKey=='geb_dec'" ng-class="{'ion-chevron-up':reverse,'ion-chevron-down':!reverse}"></span>
+                  </th>
+
+                  <th ng-click="sort('geslacht')">{{lener.geslacht}}
+                        <span class="" ng-show="sortKey=='geslacht'" ng-class="{'ion-chevron-up':reverse,'ion-chevron-down':!reverse}"></span>
+                  </th>
+            </tr>
+
+            <!-- met angular directive ng-repeat worden gegevens in de table automatisch geladen-->
+            <tr dir-paginate="lener in leners|itemsPerPage:20|orderBy:sortKey:reverse | filter:search">
+                  <td tableHeadData="">{{lener.id}}</td>
+                  <td tableHeadData="">{{lener.lidnummer}}</td>
+                  <td tableHeadData="">{{lener.geboortedecennium}}</td>
+                  <td tableHeadData="">{{lener.geslacht}}</td>
+            </tr>
+</table>
+<!-- Pagination van de table -->
+<dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" > </dir-pagination-controls>
+
+    

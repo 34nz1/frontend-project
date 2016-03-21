@@ -1,0 +1,44 @@
+
+<div ng-controller="loginCtrl" class="container">
+		<div class="login-box">
+
+			<!-- admin afbeelding-->
+			<div class="image-box">
+				<img
+  					ng-src="{{admin.imagePlaceholder}}"
+  					alt="{{admin.placeholderImage}}">
+				</img>
+			</div>
+
+			<div class="image-box">
+				<h1>{{admin.loginTitle}}</h1>
+			</div>
+					<!-- Gebruikersnaam invoerveld-->
+					<input 
+						type="text"
+						ng-model ="gebruiker.naam"
+						placeholder="{{admin.username}}"
+						id="username"
+					/>
+					<br/>
+
+					<!-- Wachtwoord invoerveld-->
+					<input 
+						type="password"
+						ng-model ="gebruiker.pass" 
+						placeholder="{{admin.password}}" 
+						id="password"
+					/>
+					<br/>
+					
+					<!-- Inlog knop-->
+					<button 
+						type="submit" 
+						ng-click="submit(gebruiker)">{{admin.login}}
+					</button>
+					<br/>
+
+					<!-- Wachtwoord herstellen-->
+					<a href=""><p class="small">{{admin.forgetPassword}}</p></a>
+		</div>
+	</div>

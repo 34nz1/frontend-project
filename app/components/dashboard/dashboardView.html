@@ -1,0 +1,78 @@
+ <div ng-controller="dashboardCtrl"> 
+
+        <!-- Logo en title gedeelte -->          
+        <div class="logo">
+            <i class="ion-android-laptop"></i>
+            <p>{{dashboard.dashboardTitleEen}}<strong>{{dashboard.dashboardTitleTwee}}</strong></p>
+        </div>
+
+        <!-- het bovenste gedeelde -->
+        <div class="header-content" id="header-content">
+                <div class="breadcrumb" id="breadcrumb">
+                    <!--breadcrumb gedeelte inhoud met daarin een custom directive van een datum en een clock -->
+                    <div class="br-content">
+                        <span class="home">
+                            <a href="#/dashboard"><i class="ion-clock"></i>{{dashboard.dashboardHome}}</a>
+                        </span>
+                        <span><div clock class="clock"></div></span>
+                    </div>
+                </div>
+               
+               <!-- het zoeken formulier -->
+                <div class="search-form">
+                    <form action="#">
+                    <label class="label"><i class="ion-ios-search-strong"></i></label>
+                        <input 
+                            type="text" 
+                            placeholder="{{dashboard.dashboardZoeken}}" 
+                            name="{{dashboard.dashboardZoeken}}" 
+                            ng-model="search"
+                            class="search-input" 
+                            id="search-input"/>
+                    </form>
+                </div>
+
+                <!-- account foto placeholder -->
+                <div class="account" id="account">
+                        <img src="{{dashboard.dashboardGebFoto}}" alt="">
+                        <i class="ion-chevron-down" id='ico-account'></i>
+                </div>
+
+                <!-- dropdown met accountholder informatie -->
+                <div class="topmenu hide" id="topbar-menu">
+                    <a><i class="ion-ios-information-outline"></i> {{dashboard.dashboardAccountInfo}}</a>
+                </div>
+        </div>
+
+        <!-- Bij het responsive, wordt de loguit button door jquery in een grijze balk veranderd -->
+        <div class="nav-button-responsive" id="nav-button-responsive">
+            <i class="ion-navicon-round"></i>
+        </div>
+
+        <!-- Side-bar gedeelde met de dashboard button-->
+        <div class="nav" id="nav">
+            <div class="menu">
+                <a>
+                    <i class="ion-speedometer"></i> <span>{{dashboard.dashboard}}</span>
+                </a>
+                    <a href="" ng-click="logUit()">
+                        <i class="ion-power"></i><span>{{dashboard.dashboardlogout}}</span>
+                    </a>
+            </div>
+        </div>
+
+        <!-- Inhoud gedeeld met een aanroep naar een table custom directive -->
+        <div class="content">
+
+            <!-- Table met gegevens ophalen -->
+                <div bibliotheek-gegevens data="lener"></div>
+        </div>
+
+        <!-- De footer met daarin een text en een icon -->
+        <div class="footer">
+            <div class="company">
+                <a href="#"><i class="ion-code-working"></i>
+                {{dashboard.dashboardTitleEen}} <strong>{{dashboard.dashboardTitleTwee}}</strong></a>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,120 @@
+
+/**** Bij een scherm met een maximaal breedte van 1024px, zou de onderstaande moeten gebeuren */
+@media only screen and (max-width: 1024px) {
+    .nav{
+        width:60px;
+    }
+
+    .nav span{display:none;}
+
+    .nav, .nav .menu a{
+        padding-left:0;
+        text-align:center;
+    }
+    .nav .ion-chevron-right{font-size:10px !important;}
+    .logo{
+        width:60px;
+    }
+    .logo p{
+        display:none;
+    }
+    .content{
+        left:60px;
+    }
+    .search-form{
+        width:auto;
+    }
+    .breadcrumb{
+        width:auto;
+    }
+    . .Dashboardbuttons{
+        width: 100%;
+    }
+    .header-content{
+        text-align:right;
+        padding-right:20px;
+    }
+
+    .footer .company{
+        display:none;
+    }
+    .footer .link{
+        display:block;
+        text-align:center;
+    }
+}
+/**** Bij een scherm met een maximaal breedte van 1024px en een minimale breedte van 768px, zou de onderstaande moeten gebeuren */
+@media (max-width: 1024px) and (min-width: 768px)  {
+    .sub-content{
+        position:absolute;
+        left:60px;
+        width:200px;
+        margin-top:-43px;
+        z-index:2;
+    }
+    .search-input{display:none;}
+    .search-input.responsive{
+        display:initial;
+        width:auto;
+    }
+    #search-close.responsive{
+        display:initial;
+    }
+}
+
+/*** vanaf 0px tot en met een breedte van 768px zou de onderstaande moeten plaats vinden **/
+@media only screen and (max-width: 768px) {
+    .nav{
+        top:110px;
+        right:0;
+        left:0;
+        bottom:0;
+        width:auto;
+        z-index:4;
+    }
+    .nav span{
+        display:initial;
+    }
+    .nav-button-responsive{
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+        z-index:3;
+
+        cursor:pointer;
+
+        background:#272930;
+
+        display:block;
+        color:#FFF;
+        text-align:center;
+        height:40px;
+        line-height:40px;
+    }
+    .content{
+        top:110px;
+        left:0;
+        bottom:0;
+    }
+    .breadcrumb{
+        display:none;
+    }
+    .search-form{
+        display:none;
+    }
+    .topmenu{
+        top:70px;
+        right:0;
+        left:0;
+        bottom:0;
+        border-radius:0px;
+        width:100%;
+        text-align:center;
+        background:#272930;
+        z-index:5;
+    }
+    .footer{display:none;}
+
+}
+
